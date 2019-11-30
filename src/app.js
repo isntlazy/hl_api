@@ -1,15 +1,17 @@
 import express from 'express'
 import path from 'path'
 import logger from 'morgan'
-import indexRouter from './routes/index'
+import bodyParser from 'body-parser'
+import usersRouter from './routes/users'
 
 const app = express()
 
-app.use(logger('dev'))
+app.use(logger('dev')) // log requests to the console
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, '../public')))
 
-app.use('/', indexRouter)
+app.use('/users', usersRouter)
 
 export default app
