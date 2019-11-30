@@ -8,6 +8,8 @@ router.get('/', (req, res, next) => {
   res.status(200).send('Ти попав в API від Highlander')
 })
 
-router.post('/', Users.signUp)
+router.post('/sign-up', Users.signUp)
+
+router.post('/sign-in', Users.signIn)
 
 export default router
