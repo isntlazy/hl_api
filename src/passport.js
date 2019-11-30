@@ -1,5 +1,6 @@
 import { Strategy, ExtractJwt } from 'passport-jwt'
-import User from './db/models/user'
+import model from './db/models'
+const { User } = model
 
 const secret = process.env.SECRET || 'some other secret as default'
 const opts = {
