@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import passport from 'passport'
 
 import usersRouter from './routes/users'
+import brandsRouter from './routes/brands'
 
 const app = express()
 
@@ -17,5 +18,6 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '../public')))
 
 app.use('/users', usersRouter)
+app.use('/brands', brandsRouter)
 
 export default app
