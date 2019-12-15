@@ -53,7 +53,7 @@ class Users {
                   }
                   res.json({
                     success: true,
-                    token: `Bearer ${token}`
+                    token: `${token}`
                   })
                 })
             } else {
